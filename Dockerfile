@@ -1,4 +1,4 @@
-FROM openjdk:alpine
+FROM openjdk:8-jdk-alpine
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 EXPOSE 8080
 WORKDIR /apps
