@@ -1,9 +1,3 @@
-FROM openjdk:8-jdk-alpine
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+FROM fabric8/java-centos-openjdk8-jdk
 EXPOSE 8080
-WORKDIR /apps
-COPY batch-scheduler-api-0.0.1.war .
-COPY target/empty.log target/empty.log
-RUN chmod -R 777 /apps
-USER appuser
-ENTRYPOINT ["java", "-Dspring.profiles.active=dev", "-jar", "batch-scheduler-api-0.0.1.war"]
+COPY batch-scheduler-api-0.0.1.war /deployments/batch-scheduler-api-0.0.1.jar
