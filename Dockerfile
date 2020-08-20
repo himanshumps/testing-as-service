@@ -32,7 +32,7 @@ RUN groupadd -r jboss -g 1000 \
   && chown -R jboss:root /deployments
 
 COPY batch-scheduler-api-0.0.1.war /deployments/batch-scheduler-api-0.0.1.war
-
+WORKDIR /deployments
 USER jboss
 
 ENTRYPOINT ["java", "-Dspring.profiles.active=dev", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/deployments/batch-scheduler-api-0.0.1.war"]
