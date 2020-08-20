@@ -4,7 +4,7 @@ USER root
 
 EXPOSE 8080
 
-RUN mkdir -p /deployments
+RUN mkdir -p /deployments/target
 
 # JAVA_APP_DIR is used by run-java.sh for finding the binaries
 ENV JAVA_APP_DIR=/deployments \
